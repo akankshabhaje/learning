@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <title>Simple Else If</title>
+</head>
+<body>
+    <label>Select the weather type : </label>
+    <select id="weather">
+        <option value="">--Select--</option>
+        <option value="sunny">Sunny</option>
+        <option value="windy">Windy</option>
+        <option value="cloudy">Cloudy</option>
+        <option value="rainy">Rainy</option>
+        <option value="snowy">Snowy</option>
+    </select>
+    <p></p>
+
+    <script>
+        const select = document.querySelector("select");
+        const para = document.querySelector("p");
+
+        select.onchange = setWeather;
+
+        function setWeather(){
+            const choice = select.value;
+            
+            if(choice == "sunny"){
+                para.textContent = 'It is nice and sunny outside. Go to the beach or pool. Get an icecream';
+            }
+            else if(choice=="windy"){
+                para.textContent = 'It is windy. You need a hat and a light jacket if you want to go out.';
+            }
+            else if(choice=="rainy"){
+                para.textContent= 'It is raning outside. Please carry an umbrella or a raincoa. Donot stay out for too long. ';
+            }
+            else if(choice=="snowy"){
+                para.textContent= 'It is snowing outside. It is not safe to go out. Better to stay home and have a nice, warm hot chocolate.';
+            }
+            else if(choice=="cloudy"){
+                para.textContent='It isn\'t raining, but the sky is grey and gloomy; it could turn any minute, so take a rain coat just in case.';
+            }
+            else{
+                para.textContent='';
+            }
+        }
+
+    </script>
+
+</body>
+</html>
